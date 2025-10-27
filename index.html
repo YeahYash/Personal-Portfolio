@@ -3,38 +3,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>YeahYash | Personal Portfolio</title>
+  <title>YeahYash | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: auto; padding: 20px; }
-    h1, h2 { color: #333; }
-    a { color: #0077cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .projects li { margin-bottom: 10px; }
-    .contact a { margin-right: 15px; }
+    /* Global styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+      color: #333;
+    }
+    a { text-decoration: none; color: #0077cc; }
+    a:hover { color: #005999; }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      border-radius: 0 0 20px 20px;
+    }
+    header h1 { margin: 0; font-size: 3em; }
+    header p { font-size: 1.2em; margin-top: 10px; }
+
+    /* Section Titles */
+    h2 {
+      color: #2575fc;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #2575fc;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Skills */
+    .skills span {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #333;
+      padding: 8px 15px;
+      margin: 5px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    /* Projects */
+    .projects li {
+      margin-bottom: 15px;
+      padding: 10px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .projects li:hover { transform: translateY(-3px); }
+    .projects a { font-weight: bold; color: #6a11cb; }
+
+    /* Contact */
+    .contact a {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: #6a11cb;
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .contact a:hover { background: #2575fc; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
   </style>
 </head>
 <body>
 
-  <h1>Hi, I'm Yash 👋</h1>
-  <p>A beginner developer exploring <b>AI/ML</b> and <b>Full Stack Development</b>.</p>
+  <header>
+    <h1>YeahYash</h1>
+    <p>Beginner Developer | AI/ML & Full Stack Enthusiast</p>
+  </header>
 
-  <h2>Skills</h2>
-  <p>Python • Java • MySQL • Flask • scikit-learn • HTML/CSS/JS</p>
+  <div class="container">
 
-  <h2>Projects</h2>
-  <ul class="projects">
-    <li><a href="https://github.com/YeahYash/Personal-Portfolio">Personal Portfolio Website</a></li>
-    <li><a href="https://github.com/YeahYash/Movie-Recommendation-System">Movie Recommendation System</a></li>
-    <li><a href="https://github.com/YeahYash/Student-Management-System">Student Management System</a></li>
-  </ul>
+    <!-- Skills Section -->
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>Python</span>
+        <span>Java</span>
+        <span>MySQL</span>
+        <span>Flask</span>
+        <span>HTML/CSS/JS</span>
+        <span>scikit-learn</span>
+      </div>
+    </section>
 
-  <h2>Contact</h2>
-  <p class="contact">
-    <a href="mailto:youremail@example.com">Email</a>
-    <a href="https://linkedin.com/in/yeahyash" target="_blank">LinkedIn</a>
-    <a href="https://github.com/YeahYash" target="_blank">GitHub</a>
-  </p>
+    <!-- Projects Section -->
+    <section>
+      <h2>Projects</h2>
+      <ul class="projects">
+        <li><a href="https://github.com/YeahYash/Personal-Portfolio" target="_blank">Personal Portfolio Website</a> - My own website hosted on GitHub Pages.</li>
+        <li><a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank">Movie Recommendation System</a> - Python project using cosine similarity to recommend movies.</li>
+        <li><a href="https://github.com/YeahYash/Student-Management-System" target="_blank">Student Management System</a> - CLI app with MySQL database for CRUD operations.</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+      <h2>Contact</h2>
+      <div class="contact">
+        <a href="mailto:youremail@example.com">Email</a>
+        <a href="https://linkedin.com/in/yeahyash" target="_blank">LinkedIn</a>
+        <a href="https://github.com/YeahYash" target="_blank">GitHub</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2025 YeahYash | Built with ❤️ and GitHub Pages
+  </footer>
 
 </body>
 </html>
-
