@@ -1,1 +1,95 @@
-<h1>Welcome to my Portfolio</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yashraj's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+    }
+    section {
+      padding: 60px 0;
+      background-color: #fff;
+      color: #333;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+    }
+    footer {
+      background-color: #1e1e2f;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>👋 Hey, I'm <span style="color:#FFD700;">Yashraj</span></h1>
+    <p>Python Developer | AI/ML Enthusiast | Full Stack Learner</p>
+    <a href="#projects" class="btn btn-warning mt-3">See My Work</a>
+  </header>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="text-center mb-5">🚀 My Recent Projects</h2>
+      <div class="row g-4">
+
+        <!-- Movie Recommendation System -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title">🎬 Movie Recommendation System</h4>
+              <p class="card-text">
+                A content-based recommendation system using Python, Flask, and scikit-learn.  
+                It suggests similar movies based on cosine similarity and user input.
+              </p>
+              <a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank" class="btn btn-outline-primary btn-sm">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Management System -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title">🎓 Student Management System</h4>
+              <p class="card-text">
+                A full-stack CRUD web app built with Python (Flask) and MySQL.  
+                It allows adding, editing, deleting, and searching student records.
+              </p>
+              <a href="https://github.com/YeahYash/Student-Management-System" target="_blank" class="btn btn-outline-primary btn-sm">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Website -->
+        <div class="col-md-6">
+          <div class="card h-100">
