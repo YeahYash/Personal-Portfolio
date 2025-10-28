@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yashraj | Portfolio</title>
-  <meta name="description" content="Yashraj — Data Science, AI, and Web Developer portfolio showcasing innovative projects and creative solutions.">
-  <meta name="author" content="Yashraj">
+  <meta name="description" content="Yash Raj — Data Science, AI, and Web Developer portfolio showcasing innovative projects and creative solutions.">
+  <meta name="author" content="Yash Raj">
+  <meta property="og:title" content="Yash Raj | Portfolio">
+  <meta property="og:description" content="Explore my projects in Data Science, AI, and Web Development.">
+  <meta property="og:image" content="profile.jpg">
+  <meta property="og:type" content="website">
 
   <!-- Favicon -->
   <link rel="icon" href="profile.jpg">
@@ -28,6 +32,11 @@
       --bg-dark: #121212;
       --text-dark: #000;
       --text-light: #fff;
+      --card-dark: #1f1f1f;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -49,8 +58,8 @@
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
     }
 
-    header.dark-mode {
-      background: #1e1e1e;
+    body.dark-mode header {
+      background: #1f1f1f;
     }
 
     header img {
@@ -102,6 +111,12 @@
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
+      background-color: #fff;
+    }
+
+    body.dark-mode .card {
+      background-color: var(--card-dark);
+      color: var(--text-light);
     }
 
     .card:hover {
@@ -119,6 +134,10 @@
 
     .progress-bar {
       background: linear-gradient(to right, var(--primary), #00d4ff);
+    }
+
+    body.dark-mode .progress {
+      background-color: #333;
     }
 
     /* Scroll-to-top button */
@@ -160,6 +179,31 @@
       background: #333;
       color: #fff;
     }
+
+    /* Floating Hire Me Button */
+    .hire-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 500;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .hire-btn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Achievement hover */
+    .card:hover h5 {
+      color: var(--primary);
+    }
   </style>
 </head>
 
@@ -168,10 +212,13 @@
   <!-- Dark Mode Toggle -->
   <div class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</div>
 
+  <!-- Hire Me Button -->
+  <a href="mailto:yashrajrajput937@gmail.com" class="hire-btn">💼 Hire Me</a>
+
   <!-- ===== HEADER ===== -->
   <header data-aos="fade-down">
     <img src="profile.jpg" alt="Profile Picture">
-    <h1>Yashraj</h1>
+    <h1>Yashrajsinh Rajput</h1>
     <p>Data Science | AI | Web Developer</p>
     <div class="social-icons">
       <a href="https://github.com/YeahYash" target="_blank"><i class="bi bi-github"></i></a>
@@ -184,7 +231,7 @@
   <!-- ===== ABOUT ===== -->
   <section id="about" class="text-center container" data-aos="fade-up">
     <h2 class="fw-bold mb-4">About Me</h2>
-    <p class="lead">Hi, I'm Yash Raj — a passionate developer who loves building data-driven and intelligent web applications. I merge analytics and design to create experiences that are both functional and visually engaging.</p>
+    <p class="lead">Hi, I'm Yashraj — a passionate developer who loves building data-driven and intelligent web applications. I merge analytics and design to create experiences that are both functional and visually engaging.</p>
   </section>
 
   <!-- ===== SKILLS ===== -->
@@ -284,10 +331,17 @@
   <button id="scrollTopBtn" onclick="scrollToTop()"><i class="bi bi-arrow-up"></i></button>
 
   <script>
-    // Dark Mode
+    // Dark Mode with Memory
     function toggleDarkMode() {
-      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
     }
+
+    window.onload = () => {
+      if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+      }
+    };
 
     // Scroll to Top
     const scrollTopBtn = document.getElementById("scrollTopBtn");
