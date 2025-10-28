@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <!-- AOS (Animations) -->
+  <!-- AOS Animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
@@ -89,13 +89,24 @@
       text-decoration: none;
     }
 
-    #visitor-count {
-      font-weight: 600;
-      color: #00C0FF;
-    }
-
     .progress-bar {
       background: linear-gradient(to right, #007bff, #00d4ff);
+    }
+
+    .resume-btn {
+      margin-top: 15px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .resume-btn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -112,6 +123,7 @@
       <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank"><i class="bi bi-linkedin"></i></a>
       <a href="mailto:yashrajrajput937@gmail.com"><i class="bi bi-envelope"></i></a>
     </div>
+    <a href="resume.pdf" class="resume-btn" download>📄 Download Resume</a>
   </header>
 
   <!-- ===== ABOUT SECTION ===== -->
@@ -120,51 +132,39 @@
     <p class="lead">Hi, I'm Yashraj — a passionate developer who loves building data-driven and intelligent web applications. I merge analytics and design to create experiences that are both functional and visually engaging.</p>
   </section>
 
-  <!-- ===== SKILLS SECTION ===== -->
+  <!-- ===== SKILLS ===== -->
   <section id="skills" class="bg-light" data-aos="fade-up">
     <div class="container">
       <h2 class="fw-bold text-center mb-5">Skills</h2>
       <div class="row g-4">
         <div class="col-md-6">
           <h6>Python</h6>
-          <div class="progress">
-            <div class="progress-bar" style="width: 90%">90%</div>
-          </div>
+          <div class="progress"><div class="progress-bar" style="width: 90%">90%</div></div>
           <h6 class="mt-3">Machine Learning</h6>
-          <div class="progress">
-            <div class="progress-bar" style="width: 85%">85%</div>
-          </div>
+          <div class="progress"><div class="progress-bar" style="width: 85%">85%</div></div>
           <h6 class="mt-3">Data Analysis</h6>
-          <div class="progress">
-            <div class="progress-bar" style="width: 80%">80%</div>
-          </div>
+          <div class="progress"><div class="progress-bar" style="width: 80%">80%</div></div>
         </div>
         <div class="col-md-6">
           <h6>Flask</h6>
-          <div class="progress">
-            <div class="progress-bar" style="width: 85%">85%</div>
-          </div>
+          <div class="progress"><div class="progress-bar" style="width: 85%">85%</div></div>
           <h6 class="mt-3">SQL & MySQL</h6>
-          <div class="progress">
-            <div class="progress-bar" style="width: 80%">80%</div>
-          </div>
+          <div class="progress"><div class="progress-bar" style="width: 80%">80%</div></div>
           <h6 class="mt-3">HTML, CSS, JS</h6>
-          <div class="progress">
-            <div class="progress-bar" style="width: 75%">75%</div>
-          </div>
+          <div class="progress"><div class="progress-bar" style="width: 75%">75%</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJECTS SECTION ===== -->
+  <!-- ===== PROJECTS ===== -->
   <section id="projects" data-aos="fade-up">
     <div class="container text-center">
       <h2 class="fw-bold mb-4">Projects</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card p-3">
-            <h5>📽️ Movie Recommendation System</h5>
+            <h5>🎬 Movie Recommendation System</h5>
             <p>ML-based web app that suggests movies based on user preferences.</p>
             <a href="https://movie-recommendation-system-lql8.onrender.com" target="_blank" class="btn btn-outline-primary btn-sm">Live Demo</a>
             <a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank" class="btn btn-outline-dark btn-sm">Source</a>
@@ -181,7 +181,7 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
+  <!-- ===== CONTACT ===== -->
   <section id="contact" class="container text-center" data-aos="fade-up">
     <h2 class="fw-bold mb-4">Contact Me</h2>
     <form id="contact-form" class="mx-auto" style="max-width: 500px;">
@@ -202,10 +202,8 @@
   <!-- ===== FOOTER ===== -->
   <footer data-aos="fade-up">
     <p>© 2025 Yashraj | All rights reserved.</p>
-    <p>👀 Visitors: <span id="visitor-count">Loading...</span></p>
   </footer>
 
-  <!-- ===== JS ===== -->
   <script>
     // EmailJS setup
     (function() {
@@ -225,22 +223,8 @@
       });
     });
 
-    // Visitor Counter (CountAPI)
-    fetch("https://api.countapi.xyz/update/YeahYashPortfolio/visits/?amount=1")
-      .then(res => res.json())
-      .then(res => {
-        document.getElementById("visitor-count").textContent = res.value.toLocaleString();
-      })
-      .catch(() => {
-        document.getElementById("visitor-count").textContent = "Unavailable";
-      });
-
-    // Initialize AOS animations
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    // AOS animations
+    AOS.init({ duration: 1000, once: true });
   </script>
-
 </body>
 </html>
