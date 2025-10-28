@@ -4,8 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yashraj | Portfolio</title>
+
+  <!-- Bootstrap & Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- AOS (Animations) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <style>
@@ -17,14 +25,14 @@
 
     header {
       background-color: #ffffffd9;
-      padding: 40px 0;
+      padding: 50px 0;
       text-align: center;
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
     }
 
     header img {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       border: 4px solid #007bff;
       transition: 0.3s ease;
@@ -36,18 +44,14 @@
 
     header h1 {
       margin-top: 15px;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 600;
-    }
-
-    header p {
-      color: #555;
     }
 
     .social-icons a {
       margin: 0 10px;
       color: #007bff;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       transition: all 0.3s ease;
     }
 
@@ -57,7 +61,7 @@
     }
 
     section {
-      padding: 60px 15px;
+      padding: 70px 15px;
     }
 
     .card {
@@ -68,14 +72,15 @@
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     footer {
       background: #001f3f;
       color: white;
       text-align: center;
-      padding: 25px 10px;
+      padding: 30px 10px;
       margin-top: 60px;
     }
 
@@ -88,33 +93,74 @@
       font-weight: 600;
       color: #00C0FF;
     }
+
+    .progress-bar {
+      background: linear-gradient(to right, #007bff, #00d4ff);
+    }
   </style>
 </head>
 
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header>
+  <header data-aos="fade-down">
     <img src="profile.jpg" alt="Profile Picture">
-    <h1>Yash Raj</h1>
+    <h1>Yashraj</h1>
     <p>Data Science | AI | Web Developer</p>
     <div class="social-icons">
       <a href="https://github.com/YeahYash" target="_blank"><i class="bi bi-github"></i></a>
       <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href="mailto:yashrajrajput937@gamil.com"><i class="bi bi-envelope"></i></a>
+      <a href="mailto:yashrajrajput937@gmail.com"><i class="bi bi-envelope"></i></a>
     </div>
   </header>
 
   <!-- ===== ABOUT SECTION ===== -->
-  <section id="about" class="text-center container">
+  <section id="about" class="text-center container" data-aos="fade-up">
     <h2 class="fw-bold mb-4">About Me</h2>
-    <p class="lead">Hi, I'm Yashraj — a passionate developer who loves building data-driven solutions and intelligent web applications. I combine analytical thinking with creative design to craft experiences that are as functional as they are beautiful.</p>
+    <p class="lead">Hi, I'm Yashraj — a passionate developer who loves building data-driven and intelligent web applications. I merge analytics and design to create experiences that are both functional and visually engaging.</p>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="bg-light" data-aos="fade-up">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h6>Python</h6>
+          <div class="progress">
+            <div class="progress-bar" style="width: 90%">90%</div>
+          </div>
+          <h6 class="mt-3">Machine Learning</h6>
+          <div class="progress">
+            <div class="progress-bar" style="width: 85%">85%</div>
+          </div>
+          <h6 class="mt-3">Data Analysis</h6>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%">80%</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h6>Flask</h6>
+          <div class="progress">
+            <div class="progress-bar" style="width: 85%">85%</div>
+          </div>
+          <h6 class="mt-3">SQL & MySQL</h6>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%">80%</div>
+          </div>
+          <h6 class="mt-3">HTML, CSS, JS</h6>
+          <div class="progress">
+            <div class="progress-bar" style="width: 75%">75%</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ===== PROJECTS SECTION ===== -->
-  <section id="projects" class="bg-light text-center">
-    <div class="container">
-      <h2 class="fw-bold mb-4">My Projects</h2>
+  <section id="projects" data-aos="fade-up">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Projects</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card p-3">
@@ -127,7 +173,7 @@
         <div class="col-md-4">
           <div class="card p-3">
             <h5>📊 Student Management System</h5>
-            <p>Flask + MySQL based system for managing student records easily.</p>
+            <p>Flask + MySQL system for managing student data efficiently.</p>
             <a href="https://github.com/YeahYash/Student-Management-System" target="_blank" class="btn btn-outline-dark btn-sm">Source</a>
           </div>
         </div>
@@ -136,7 +182,7 @@
   </section>
 
   <!-- ===== CONTACT SECTION ===== -->
-  <section id="contact" class="container text-center">
+  <section id="contact" class="container text-center" data-aos="fade-up">
     <h2 class="fw-bold mb-4">Contact Me</h2>
     <form id="contact-form" class="mx-auto" style="max-width: 500px;">
       <div class="mb-3">
@@ -154,15 +200,16 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>© 2025 Yash Raj | All rights reserved.</p>
+  <footer data-aos="fade-up">
+    <p>© 2025 Yashraj | All rights reserved.</p>
     <p>👀 Visitors: <span id="visitor-count">Loading...</span></p>
   </footer>
 
+  <!-- ===== JS ===== -->
   <script>
     // EmailJS setup
     (function() {
-      emailjs.init("Ly4VrR4VOd0PWUxjM"); // ✅ Your public key
+      emailjs.init("Ly4VrR4VOd0PWUxjM");
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function(e) {
@@ -173,14 +220,13 @@
         message: document.getElementById("message").value
       }).then(() => {
         document.getElementById("status").innerHTML = "✅ Message sent successfully!";
-      }, (error) => {
+      }, () => {
         document.getElementById("status").innerHTML = "❌ Failed to send message.";
       });
     });
 
-    // Visitor counter (CountAPI)
-    const url = "https://api.countapi.xyz/hit/YeahYash.github.io/visits";
-    fetch(url)
+    // Visitor Counter (CountAPI)
+    fetch("https://api.countapi.xyz/update/YeahYashPortfolio/visits/?amount=1")
       .then(res => res.json())
       .then(res => {
         document.getElementById("visitor-count").textContent = res.value.toLocaleString();
@@ -188,6 +234,12 @@
       .catch(() => {
         document.getElementById("visitor-count").textContent = "Unavailable";
       });
+
+    // Initialize AOS animations
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
   </script>
 
 </body>
