@@ -1,183 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yashraj | Portfolio</title>
-  <link rel="icon" href="profile.jpg">
-
-  <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <style>
     body {
+      background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
       font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
-      color: #222;
       overflow-x: hidden;
     }
-    html { scroll-behavior: smooth; }
 
-    /* Navbar */
-    .navbar {
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
     header {
-      padding-top: 120px;
+      background-color: #ffffffd9;
+      padding: 40px 0;
       text-align: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #007bff, #6610f2);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
     }
+
     header img {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      border: 4px solid #007bff;
+      transition: 0.3s ease;
     }
-    .section-title {
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-    .btn:hover { transform: scale(1.05); transition: 0.2s; }
 
-    /* Contact floating button */
-    .fab-contact {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 999;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    header img:hover {
+      transform: scale(1.05);
     }
-    footer {
-      background: linear-gradient(135deg, #0d1117, #161b22);
-      color: #ccc;
-      text-align: center;
-      padding: 40px 15px;
-      margin-top: 60px;
-      border-top: 2px solid #0d6efd;
-}
 
-      .social-icons a {
-      color: #ccc;
-      margin: 0 12px;
+    header h1 {
+      margin-top: 15px;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    header p {
+      color: #555;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: #007bff;
       font-size: 1.5rem;
       transition: all 0.3s ease;
-}
+    }
 
-      .social-icons a:hover {
-      color: #0d6efd;
-      transform: scale(1.15);
-}
+    .social-icons a:hover {
+      color: #0056b3;
+      transform: scale(1.2);
+    }
 
+    section {
+      padding: 60px 15px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    footer {
+      background: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #00C0FF;
+      text-decoration: none;
+    }
+
+    #visitor-count {
+      font-weight: 600;
+      color: #00C0FF;
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-semibold" href="#">Yashraj</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HEADER / HERO -->
+  <!-- ===== HEADER ===== -->
   <header>
-    <img src="profile.jpg" alt="Profile Picture" data-aos="zoom-in">
-    <h1 class="mt-3" data-aos="fade-up">Hi, I'm <strong>Yashraj</strong></h1>
-    <p data-aos="fade-up" data-aos-delay="100">I love creating web apps that make life easier.</p>
-
-    <a href="Yashraj_Resume.pdf" class="btn btn-light mt-3" download>
-      <i class="bi bi-file-earmark-person"></i> Download Resume
-    </a>
+    <img src="profile.jpg" alt="Profile Picture">
+    <h1>Yash Raj</h1>
+    <p>Data Science | AI | Web Developer</p>
+    <div class="social-icons">
+      <a href="https://github.com/YeahYash" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:yashrajrajput937@gamil.com"><i class="bi bi-envelope"></i></a>
+    </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="container my-5" data-aos="fade-up">
-    <h2 class="section-title">👨‍💻 About Me</h2>
-    <p class="lead text-center">
-      I'm a passionate developer skilled in Python, Flask, and modern web technologies.
-      I enjoy solving real-world problems through elegant code and design.
-    </p>
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="text-center container">
+    <h2 class="fw-bold mb-4">About Me</h2>
+    <p class="lead">Hi, I'm Yashraj — a passionate developer who loves building data-driven solutions and intelligent web applications. I combine analytical thinking with creative design to craft experiences that are as functional as they are beautiful.</p>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="container">
-    <h2 class="section-title" data-aos="fade-up">🧰 Skills</h2>
-    <div class="row text-center mt-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-6 col-md-3 mb-3"><span class="badge bg-primary">Python</span></div>
-      <div class="col-6 col-md-3 mb-3"><span class="badge bg-success">Flask</span></div>
-      <div class="col-6 col-md-3 mb-3"><span class="badge bg-warning text-dark">MySQL</span></div>
-      <div class="col-6 col-md-3 mb-3"><span class="badge bg-info text-dark">Java</span></div>
-      <div class="col-6 col-md-3 mb-3"><span class="badge bg-dark">Git & GitHub</span></div>
-      <div class="col-6 col-md-3 mb-3"><span class="badge bg-danger">HTML/CSS/JS</span></div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="container my-5">
-    <h2 class="section-title" data-aos="fade-up">🚀 Projects</h2>
-
-    <div class="row mt-4">
-      <div class="col-md-6 mb-4" data-aos="fade-right">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">🎬 Movie Recommendation System</h5>
-            <p class="card-text">
-              A Flask-based ML app that suggests movies based on user preferences.
-            </p>
-            <a href="https://movie-recommendation-system-lql8.onrender.com" target="_blank" class="btn btn-primary">Live Demo</a>
-            <a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank" class="btn btn-outline-dark">GitHub</a>
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">My Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card p-3">
+            <h5>📽️ Movie Recommendation System</h5>
+            <p>ML-based web app that suggests movies based on user preferences.</p>
+            <a href="https://movie-recommendation-system-lql8.onrender.com" target="_blank" class="btn btn-outline-primary btn-sm">Live Demo</a>
+            <a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank" class="btn btn-outline-dark btn-sm">Source</a>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-6 mb-4" data-aos="fade-left">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">🎓 Student Management System</h5>
-            <p class="card-text">
-              Flask + MySQL web app to manage student records efficiently.
-            </p>
-            <a href="#" class="btn btn-secondary disabled">Live Demo</a>
-            <a href="https://github.com/YeahYash/Student-Management-System" target="_blank" class="btn btn-outline-dark">GitHub</a>
+        <div class="col-md-4">
+          <div class="card p-3">
+            <h5>📊 Student Management System</h5>
+            <p>Flask + MySQL based system for managing student records easily.</p>
+            <a href="https://github.com/YeahYash/Student-Management-System" target="_blank" class="btn btn-outline-dark btn-sm">Source</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="container my-5" data-aos="fade-up">
-    <h2 class="section-title">📩 Contact Me</h2>
-    <form id="contact-form" class="mt-3 col-md-6 mx-auto">
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="container text-center">
+    <h2 class="fw-bold mb-4">Contact Me</h2>
+    <form id="contact-form" class="mx-auto" style="max-width: 500px;">
       <div class="mb-3">
         <input type="text" class="form-control" id="name" placeholder="Your Name" required>
       </div>
@@ -187,57 +148,47 @@
       <div class="mb-3">
         <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary w-100">Send Message</button>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <p id="status" class="mt-3"></p>
     </form>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="social-icons">
-      <a href="https://github.com/YeahYash" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      <a href="mailto:yashrajrajput937@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
-
-    </div>
-    <p class="mt-3 text-muted">
-      👀 Visitors:
-       <a href="https://hits.seeyoufarm.com">
-          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://YeahYash.github.io/Personal-Portfolio&count_bg=%2300C0FF&title_bg=%2300456A&icon=github.svg&icon_color=%23FFFFFF&title=Visitors&edge_flat=false"/>
-       </a>
-    </p>
-    <p class="mt-2">© 2025 Yashraj. All rights reserved.</p>
+    <p>© 2025 Yash Raj | All rights reserved.</p>
+    <p>👀 Visitors: <span id="visitor-count">Loading...</span></p>
   </footer>
 
-  <!-- Floating contact button -->
-  <a href="#contact" class="btn btn-primary fab-contact" title="Contact Me">
-    <i class="bi bi-chat-dots-fill"></i>
-  </a>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-
-    // Initialize EmailJS
+    // EmailJS setup
     (function() {
-      emailjs.init("Ly4VrR4VOd0PWUxjM"); // Your public key
+      emailjs.init("Ly4VrR4VOd0PWUxjM"); // ✅ Your public key
     })();
 
-    const form = document.getElementById("contact-form");
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
       emailjs.send("service_m6iir3a", "template_dmvgc4c", {
         from_name: document.getElementById("name").value,
         from_email: document.getElementById("email").value,
         message: document.getElementById("message").value
-      }).then(function() {
-        alert("✅ Message sent successfully!");
-        form.reset();
-      }, function(error) {
-        alert("❌ Failed to send message: " + JSON.stringify(error));
+      }).then(() => {
+        document.getElementById("status").innerHTML = "✅ Message sent successfully!";
+      }, (error) => {
+        document.getElementById("status").innerHTML = "❌ Failed to send message.";
       });
     });
+
+    // Visitor counter (CountAPI)
+    const url = "https://api.countapi.xyz/hit/YeahYash.github.io/visits";
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById("visitor-count").textContent = res.value.toLocaleString();
+      })
+      .catch(() => {
+        document.getElementById("visitor-count").textContent = "Unavailable";
+      });
   </script>
+
 </body>
 </html>
