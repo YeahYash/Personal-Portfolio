@@ -3,47 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yashraj | Portfolio</title>
+  <title>Yashraj | Developer Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
+      background: #f4f6f8;
       font-family: 'Poppins', sans-serif;
     }
-    nav {
-      background-color: rgba(0, 0, 0, 0.3);
+    nav.navbar {
+      background-color: #111827;
+    }
+    nav .navbar-brand {
+      font-weight: 700;
+      color: #fff !important;
+    }
+    nav a.nav-link {
+      color: #d1d5db !important;
+      margin: 0 8px;
+      transition: color 0.3s;
+    }
+    nav a.nav-link:hover {
+      color: #ffffff !important;
     }
     section {
-      padding: 60px 20px;
-      text-align: center;
+      padding: 80px 0;
     }
-    h1, h2 {
-      font-weight: bold;
-    }
-    .btn-custom {
-      border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
+    #hero {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
       color: white;
-      margin: 5px;
-      transition: 0.3s;
-      text-decoration: none;
+      text-align: center;
+      padding: 120px 20px;
     }
-    .btn-demo {
-      background-color: #007bff;
+    #hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
     }
-    .btn-github {
-      background-color: #28a745;
+    .project-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
-    .btn-custom:hover {
-      opacity: 0.8;
+    .project-card:hover {
+      transform: translateY(-5px);
     }
     footer {
-      background-color: rgba(0, 0, 0, 0.2);
-      padding: 20px;
+      background: #111827;
+      color: #9ca3af;
+      padding: 20px 0;
       text-align: center;
-      color: #ddd;
     }
   </style>
 </head>
@@ -51,8 +59,11 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Yashraj</a>
-      <div class="collapse navbar-collapse justify-content-end">
+      <a class="navbar-brand" href="#">Yashraj</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
@@ -62,56 +73,77 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="hero">
     <div class="container">
-      <h1 class="display-4 fw-bold">Welcome to My Portfolio 🎨</h1>
-      <p class="lead">Hi, I'm <strong>Yashraj</strong> — a passionate developer building modern web apps & AI-powered solutions.</p>
+      <h1>Hi, I'm Yashraj 👋</h1>
+      <p class="lead mt-3">Beginner developer exploring AI/ML and Full-Stack development.</p>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
-    <div class="container">
-      <h2>👨‍💻 About Me</h2>
-      <p>I'm a developer with a love for Python, Flask, and Machine Learning.  
-         I enjoy creating smart systems, intuitive designs, and impactful web projects.</p>
-    </div>
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <h2>🚀 My Projects</h2>
-      <!-- Movie Recommendation System -->
-      <div class="mt-4">
-        <p>A smart ML-based web app that recommends similar movies using cosine similarity.</p>
-        <a href="https://movie-recommendation-system-lql8.onrender.com" target="_blank" class="btn-custom btn-demo">🌐 Live Demo</a>
-
-      <!-- Add future projects below -->
-      <div class="mt-4">
-        <h4>🎓 Student Management System</h4>
-        <a href="#" class="btn-custom btn-demo disabled">Coming Soon</a>
-
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">About Me</h2>
+      <p class="text-muted mx-auto" style="max-width: 700px;">
+        I'm passionate about learning how things work and turning ideas into code.  
+        I enjoy working with <strong>Python</strong>, <strong>Java</strong>, and <strong>MySQL</strong> — 
+        and I’m currently building projects in <strong>Machine Learning</strong> and <strong>Full-Stack Web Dev</strong>.
+      </p>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>📬 Get in Touch</h2>
-      <p>Want to collaborate or learn more? Drop me a message!</p>
+  <!-- Projects -->
+  <section id="projects" style="background-color: #ffffff;">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">My Projects</h2>
+      <div class="row g-4 justify-content-center">
+
+        <!-- Project 1 -->
+        <div class="col-md-5">
+          <div class="card project-card p-3">
+            <div class="card-body">
+              <h4 class="card-title">🎬 Movie Recommendation System</h4>
+              <p class="card-text text-muted">
+                A Flask-based ML app that suggests similar movies using cosine similarity and TF-IDF.
+              </p>
+              <a href="https://movie-recommendation-system-lql8.onrender.com" target="_blank" class="btn btn-primary m-1">🌐 Live Demo</a>
+              <a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank" class="btn btn-dark m-1">💻 GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-5">
+          <div class="card project-card p-3">
+            <div class="card-body">
+              <h4 class="card-title">🎓 Student Management System</h4>
+              <p class="card-text text-muted">
+                A CRUD web app using Flask and MySQL to manage student data efficiently.
+              </p>
+              <a href="#" class="btn btn-secondary m-1 disabled">Coming Soon</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">Get in Touch</h2>
+      <p class="text-muted">Interested in collaborating or hiring me? Let’s talk!</p>
+      <a href="mailto:yashraj@example.com" class="btn btn-success">✉️ Email Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Yashraj | Built with ❤️ using HTML & Bootstrap</p>
+    <p>© 2025 Yashraj — Built with ❤️ using HTML & Bootstrap</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-  </section>
-
-      <a href="mailto:yashraj@example.com" class="btn-custom btn-demo">✉️ Email Me</a>
-  <!-- Contact Section -->
-      </div>
-        <p>A CRUD-based Flask app connected to MySQL for managing student data efficiently.</p>
-      </div>
-        <a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank" class="btn-custom btn-github">💻 GitHub Repo</a>
-        <h4>🎬 Movie Recommendation System</h4>
-
-
