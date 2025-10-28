@@ -1,117 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yashraj's Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yashraj | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(135deg, #74ABE2, #5563DE);
-      color: #fff;
-      font-family: "Poppins", sans-serif;
-      scroll-behavior: smooth;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-family: 'Poppins', sans-serif;
     }
-    header {
-      text-align: center;
-      padding: 80px 20px 50px;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #f0f0f0;
+    nav {
+      background-color: rgba(0, 0, 0, 0.3);
     }
     section {
-      padding: 60px 0;
-      background-color: #fff;
-      color: #333;
+      padding: 60px 20px;
+      text-align: center;
     }
-    .card {
+    h1, h2 {
+      font-weight: bold;
+    }
+    .btn-custom {
       border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s ease;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: white;
+      margin: 5px;
+      transition: 0.3s;
+      text-decoration: none;
     }
-    .card:hover {
-      transform: translateY(-6px);
+    .btn-demo {
+      background-color: #007bff;
+    }
+    .btn-github {
+      background-color: #28a745;
+    }
+    .btn-custom:hover {
+      opacity: 0.8;
     }
     footer {
-      background-color: #1e1e2f;
-      color: #ccc;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 20px;
       text-align: center;
-      padding: 25px 0;
-      font-size: 0.9rem;
+      color: #ddd;
     }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header>
-    <h1>👋 Hey, I'm <span style="color:#FFD700;">Yashraj</span></h1>
-    <p>Python Developer | AI/ML Enthusiast | Full Stack Learner</p>
-    <a href="#projects" class="btn btn-warning mt-3">See My Work</a>
-  </header>
-
-  <!-- PROJECTS SECTION -->
-  <section id="projects">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <h2 class="text-center mb-5">🚀 My Recent Projects</h2>
-      <div class="row g-4">
-
-        <!-- Movie Recommendation System -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="card-title">🎬 Movie Recommendation System</h4>
-              <p class="card-text">
-                A content-based recommendation system using Python, Flask, and scikit-learn.  
-                It suggests similar movies based on cosine similarity and user input.
-              </p>
-              <a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank" class="btn btn-outline-primary btn-sm">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Student Management System -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="card-title">🎓 Student Management System</h4>
-              <p class="card-text">
-                A full-stack CRUD web app built with Python (Flask) and MySQL.  
-                It allows adding, editing, deleting, and searching student records.
-              </p>
-              <a href="https://github.com/YeahYash/Student-Management-System" target="_blank" class="btn btn-outline-primary btn-sm">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Portfolio Website -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="card-title">💼 Personal Portfolio Website</h4>
-              <p class="card-text">
-                A responsive and modern portfolio built with HTML, CSS, and Bootstrap to showcase my projects and skills.
-              </p>
-              <a href="https://yeahyash.github.io/Personal-Portfolio" target="_blank" class="btn btn-outline-primary btn-sm">Live Site</a>
-              <a href="https://github.com/YeahYash/Personal-Portfolio" target="_blank" class="btn btn-outline-secondary btn-sm">GitHub Repo</a>
-            </div>
-          </div>
-        </div>
-
+      <a class="navbar-brand fw-bold" href="#">Yashraj</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Welcome to My Portfolio 🎨</h1>
+      <p class="lead">Hi, I'm <strong>Yashraj</strong> — a passionate developer building modern web apps & AI-powered solutions.</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Made with ❤️ by Yashraj | © 2025</p>
-  </footer>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>👨‍💻 About Me</h2>
+      <p>I'm a developer with a love for Python, Flask, and Machine Learning.  
+         I enjoy creating smart systems, intuitive designs, and impactful web projects.</p>
+    </div>
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>🚀 My Projects</h2>
+      <!-- Movie Recommendation System -->
+      <div class="mt-4">
+        <p>A smart ML-based web app that recommends similar movies using cosine similarity.</p>
+        <a href="https://movie-recommendation-system-lql8.onrender.com" target="_blank" class="btn-custom btn-demo">🌐 Live Demo</a>
 
+      <!-- Add future projects below -->
+      <div class="mt-4">
+        <h4>🎓 Student Management System</h4>
+        <a href="#" class="btn-custom btn-demo disabled">Coming Soon</a>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>📬 Get in Touch</h2>
+      <p>Want to collaborate or learn more? Drop me a message!</p>
+    </div>
+  <footer>
+    <p>© 2025 Yashraj | Built with ❤️ using HTML & Bootstrap</p>
+  </footer>
 </body>
 </html>
+  </section>
+
+      <a href="mailto:yashraj@example.com" class="btn-custom btn-demo">✉️ Email Me</a>
+  <!-- Contact Section -->
+      </div>
+        <p>A CRUD-based Flask app connected to MySQL for managing student data efficiently.</p>
+      </div>
+        <a href="https://github.com/YeahYash/Movie-Recommendation-System" target="_blank" class="btn-custom btn-github">💻 GitHub Repo</a>
+        <h4>🎬 Movie Recommendation System</h4>
+
+
