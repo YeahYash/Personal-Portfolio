@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yashraj Rajput | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -39,18 +39,38 @@
     .btn:hover{background:#ffa733;transform:translateY(-2px);}
     @keyframes pulse{0%,100%{box-shadow:0 0 10px #ff7b00;}50%{box-shadow:0 0 25px #ffa733;}}
 
-    /* GENERAL SECTIONS */
     .section-title{text-align:center;font-size:2rem;margin-bottom:2rem;color:#ff7b00;}
 
-    .skills-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
-    .skill{background:#1c1c1c;border:1px solid #ff7b00;padding:0.8rem 1.2rem;border-radius:25px;transition:0.3s;}
-    .skill:hover{background:#ff7b00;color:#000;}
+    /* ABOUT + mini timeline */
+    .about-wrap{max-width:980px;margin:0 auto;}
+    .about-intro{font-size:1.05rem;line-height:1.8;color:#e8e8e8;text-align:center;margin-bottom:1.8rem;}
+    .timeline{position:relative;margin:1rem auto 0;max-width:760px;}
+    .timeline::before{content:"";position:absolute;left:calc(50% - 1px);top:0;bottom:0;width:2px;background:#333;}
+    .t-item{display:flex;gap:1rem;align-items:flex-start;margin:1.2rem 0;}
+    .t-left,.t-right{width:50%;}
+    .t-right{text-align:left;}
+    .t-left{text-align:right;}
+    .t-badge{background:#1c1c1c;border:2px solid #ff7b00;color:#fff;padding:0.4rem 0.7rem;border-radius:20px;font-size:0.85rem;display:inline-block;}
+    .t-card{background:#181818;border:1px solid #333;border-radius:10px;padding:0.9rem 1rem;margin-top:0.5rem;}
+    .t-dot{position:absolute;left:calc(50% - 7px);width:14px;height:14px;background:#ff7b00;border-radius:50%;box-shadow:0 0 10px #ff7b00;}
+    .t-dot.dot1{top:38px}.t-dot.dot2{top:162px}
 
+    /* SKILLS (tags + bars) */
+    .skills-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;margin-bottom:1.8rem;}
+    .skill{background:#1c1c1c;border:1px solid #ff7b00;padding:0.6rem 1rem;border-radius:25px;transition:0.3s;font-size:0.95rem;}
+    .skill:hover{background:#ff7b00;color:#000;}
+    .bars{max-width:900px;margin:0 auto;}
+    .bar{margin:12px 0;}
+    .bar-title{display:flex;justify-content:space-between;margin-bottom:6px;font-size:0.95rem;color:#ddd;}
+    .bar-track{height:10px;background:#222;border-radius:8px;overflow:hidden;border:1px solid #333;}
+    .bar-fill{height:100%;width:0;background:linear-gradient(90deg,#ff7b00,#ffa733);border-radius:8px;transition:width 1.2s ease;}
+
+    /* PROJECTS */
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
     .project-card{background:#1a1a1a;border:1px solid #333;border-radius:15px;padding:1.5rem;transition:0.3s;text-align:left;}
     .project-card:hover{border-color:#ff7b00;transform:translateY(-5px);}
 
-    /* Carousel */
+    /* ACHIEVEMENTS (carousel) */
     .achievements-carousel{display:flex;overflow:hidden;position:relative;width:100%;}
     .carousel-track{display:flex;animation:scrollLoop 35s linear infinite;}
     .achievement-badge{flex:0 0 auto;background:#1c1c1c;color:#fff;border:2px solid #ff7b00;border-radius:25px;
@@ -58,16 +78,41 @@
     .achievement-badge:hover{background:#ff7b00;color:#000;transform:scale(1.05);}
     @keyframes scrollLoop{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
+    /* CONTACT */
+    .contact p.small{color:#cfcfcf;margin-top:8px}
+
+    /* FOOTER + ROCKET + HIRE ME */
     footer{background:#111;text-align:center;padding:2rem;border-top:2px solid #ff7b00;}
     #rocket{position:fixed;bottom:30px;right:30px;background:#ff7b00;color:#fff;border-radius:50%;width:50px;height:50px;
       display:flex;justify-content:center;align-items:center;cursor:pointer;box-shadow:0 0 10px #ff7b00;transition:0.3s;z-index:999;}
     #rocket:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 0 20px #ffa733;}
+    .hire{position:fixed;bottom:30px;left:30px;background:#ff7b00;color:#000;border:none;border-radius:28px;
+      padding:10px 16px;font-weight:600;cursor:pointer;z-index:999;box-shadow:0 0 10px #ff7b00;transition:.25s;}
+    .hire i{margin-right:8px}
+    .hire:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 0 20px #ffa733;}
+
+    /* MODAL (resume preview) */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:2000;}
+    .modal.open{display:flex;}
+    .modal-card{background:#121212;border:1px solid #333;border-radius:12px;max-width:920px;width:92%;max-height:86vh;overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #222;}
+    .modal-head h4{color:#ff7b00;margin:0}
+    .modal-body{background:#0c0c0c;}
+    .modal-actions{display:flex;gap:10px;align-items:center}
+    .m-btn{background:#1c1c1c;border:1px solid #444;color:#fff;padding:6px 12px;border-radius:8px;cursor:pointer;}
+    .m-btn.primary{background:#ff7b00;color:#000;border-color:#ff7b00;}
+    .modal iframe{width:100%;height:72vh;border:0;}
+    .close-x{background:transparent;border:none;color:#fff;font-size:1.2rem;cursor:pointer;margin-left:6px}
 
     @media(max-width:768px){
       .hero h1{font-size:2.2rem;}
       .hero img{width:140px;height:140px;}
       section{padding:5rem 1.5rem;}
       .achievement-badge{font-size:0.9rem;padding:0.8rem 1.2rem;}
+      .timeline::before{left:8px}
+      .t-left,.t-right{width:100%;text-align:left}
+      .t-dot{left:2px}
     }
   </style>
 </head>
@@ -76,6 +121,7 @@
     <div class="logo">Yashraj</div>
     <nav>
       <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#achievements">Achievements</a>
@@ -83,6 +129,7 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero" id="home">
     <img src="profile.jpg" alt="Yashraj" id="profilePic">
     <h1>Yashraj Rajput</h1>
@@ -93,18 +140,74 @@
       <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://wa.me/919687564283" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <a href="Yashraj_Resume.pdf" download class="btn">📄 Download Resume</a>
+    <a href="#" id="openResume" class="btn">📄 View / Download Resume</a>
   </section>
 
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-wrap">
+      <p class="about-intro">
+        I’m a software & machine learning engineer who loves building clean, data-driven, and scalable solutions.
+        My tools of choice are <b>Java</b>, <b>Python</b>, and modern web tech — with a focus on elegant UX and robust backend design.
+      </p>
+
+      <!-- mini timeline (concise, fits your vibe) -->
+      <div class="timeline">
+        <span class="t-dot dot1"></span><span class="t-dot dot2"></span>
+
+        <div class="t-item">
+          <div class="t-left">
+            <span class="t-badge">Java Intern</span>
+            <div class="t-card">Hands-on Java + SQL web development at URO Websoft Solutions.</div>
+          </div>
+          <div class="t-right"></div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-left"></div>
+          <div class="t-right">
+            <span class="t-badge">ML & Systems</span>
+            <div class="t-card">Projects in ML (recommendation, vision) and full-stack app design.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
   <section id="skills">
     <h2 class="section-title">Skills</h2>
+
+    <!-- tags -->
     <div class="skills-grid">
       <div class="skill">Java</div><div class="skill">Python</div><div class="skill">SQL</div>
       <div class="skill">Machine Learning</div><div class="skill">Node.js</div>
       <div class="skill">TensorFlow</div><div class="skill">Scikit-learn</div><div class="skill">HTML/CSS/JS</div>
     </div>
+
+    <!-- animated bars -->
+    <div class="bars">
+      <div class="bar">
+        <div class="bar-title"><span>Java</span><span>90%</span></div>
+        <div class="bar-track"><div class="bar-fill" data-width="90%"></div></div>
+      </div>
+      <div class="bar">
+        <div class="bar-title"><span>Python</span><span>85%</span></div>
+        <div class="bar-track"><div class="bar-fill" data-width="85%"></div></div>
+      </div>
+      <div class="bar">
+        <div class="bar-title"><span>SQL</span><span>80%</span></div>
+        <div class="bar-track"><div class="bar-fill" data-width="80%"></div></div>
+      </div>
+      <div class="bar">
+        <div class="bar-title"><span>Machine Learning</span><span>75%</span></div>
+        <div class="bar-track"><div class="bar-fill" data-width="75%"></div></div>
+      </div>
+    </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2 class="section-title">Projects</h2>
     <div class="projects-grid">
@@ -125,6 +228,7 @@
     </div>
   </section>
 
+  <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <h2 class="section-title">Achievements</h2>
     <div class="achievements-carousel">
@@ -140,39 +244,59 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2 class="section-title">Contact Me</h2>
-    <p style="text-align:center;">Feel free to reach out via email, WhatsApp, or LinkedIn for collaborations or opportunities.</p>
+    <p style="text-align:center;">Open to internships, junior roles, and freelance projects — let’s build something excellent.</p>
     <p style="text-align:center;margin-top:0.5rem;color:#ff7b00;font-weight:600;">📞 +91 9687564283</p>
-    <div class="social" style="justify-content:center;margin-top:1.5rem;">
+    <div class="social" style="justify-content:center;margin-top:1.2rem;">
       <a href="mailto:yashrajrajput937@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://wa.me/919687564283" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
+    <p class="small" style="text-align:center;">Responses in 24 hours. Based in Rouen, FR & Vadodara, IN.</p>
   </section>
 
   <footer><p>© 2025 Yashraj Rajput. All Rights Reserved.</p></footer>
+
+  <!-- Floating Buttons -->
+  <button class="hire" onclick="window.open('https://wa.me/919687564283','_blank')">
+    <i class="fa-solid fa-briefcase"></i> Hire Me
+  </button>
   <div id="rocket"><i class="fa-solid fa-rocket"></i></div>
+
+  <!-- Resume Modal -->
+  <div id="resumeModal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h4>Resume — Yashraj Rajput</h4>
+        <div class="modal-actions">
+          <a class="m-btn primary" href="Yashraj_Resume.pdf" download>Download PDF</a>
+          <button class="close-x" id="closeModal" aria-label="Close">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe src="Yashraj_Resume.pdf#toolbar=0&zoom=110" title="Resume preview"></iframe>
+      </div>
+    </div>
+  </div>
 
   <script>
     // Fade-in observer
     const sections=document.querySelectorAll("section");
     const observer=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting)entry.target.classList.add("visible");
-      });
+      entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add("visible"); });
     },{threshold:0.2});
     sections.forEach(s=>observer.observe(s));
 
     // Navbar highlight
     const navLinks=document.querySelectorAll('header nav a');
     window.addEventListener('scroll',()=>{
-      let fromTop=window.scrollY+150;
+      const fromTop=window.scrollY+150;
       navLinks.forEach(link=>{
-        let section=document.querySelector(link.getAttribute('href'));
-        if(section.offsetTop<=fromTop && section.offsetTop+section.offsetHeight>fromTop){
-          navLinks.forEach(a=>a.classList.remove('active'));
-          link.classList.add('active');
+        const section=document.querySelector(link.getAttribute('href'));
+        if(section && section.offsetTop<=fromTop && section.offsetTop+section.offsetHeight>fromTop){
+          navLinks.forEach(a=>a.classList.remove('active')); link.classList.add('active');
         }
       });
     });
@@ -187,33 +311,36 @@
 
     // Typing animation
     const roles=["Java Developer","Machine Learning Engineer","Full Stack Developer","Software Engineer"];
-    let i=0,j=0,current="",isDeleting=false;
+    let i=0,j=0,isDeleting=false;
     const typing=document.querySelector(".typing");
     function type(){
-      if(i<roles.length){
-        if(!isDeleting && j<=roles[i].length){
-          current=roles[i].substring(0,j++);
-          typing.textContent=current;
-          setTimeout(type,100);
-        }else if(isDeleting && j>=0){
-          current=roles[i].substring(0,j--);
-          typing.textContent=current;
-          setTimeout(type,50);
-        }else{
-          isDeleting=!isDeleting;
-          if(!isDeleting){i++;j=0;}
-          if(i>=roles.length)i=0;
-          setTimeout(type,800);
-        }
-      }
+      const word=roles[i];
+      typing.textContent=isDeleting ? word.substring(0,j--) : word.substring(0,j++);
+      if(!isDeleting && j===word.length) setTimeout(()=>isDeleting=true,800);
+      else if(isDeleting && j<0){ isDeleting=false; i=(i+1)%roles.length; }
+      setTimeout(type,isDeleting?55:95);
     } type();
 
-    // Parallax scroll for profile picture
+    // Parallax profile photo
     const profilePic=document.getElementById('profilePic');
-    window.addEventListener('scroll',()=>{
-      let offset=window.scrollY*0.2;
-      profilePic.style.transform=`translateY(${offset}px)`;
+    window.addEventListener('scroll',()=>{ profilePic.style.transform=`translateY(${window.scrollY*0.2}px)`; });
+
+    // Animate skill bars on view
+    const fills=document.querySelectorAll('.bar-fill');
+    const barObs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.style.width=e.target.dataset.width; barObs.unobserve(e.target); }
+      });
+    },{threshold:0.6});
+    fills.forEach(f=>barObs.observe(f));
+
+    // Resume modal controls
+    const modal=document.getElementById('resumeModal');
+    document.getElementById('openResume').addEventListener('click',e=>{
+      e.preventDefault(); modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
     });
+    document.getElementById('closeModal').addEventListener('click',()=>{ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); });
+    modal.addEventListener('click',e=>{ if(e.target===modal){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }});
   </script>
 </body>
 </html>
