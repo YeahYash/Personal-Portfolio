@@ -6,97 +6,71 @@
   <title>Yashraj Rajput | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-    body { background: #0f0f0f; color: #fff; overflow-x: hidden; }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+    body{background:#0f0f0f;color:#fff;overflow-x:hidden;}
 
-    header {
-      position: fixed; width: 100%; top: 0; left: 0;
-      background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 3rem; z-index: 1000; border-bottom: 2px solid #ff7b00;
-      animation: fadeDown 1s ease-in-out;
-    }
+    /* HEADER */
+    header{position:fixed;width:100%;top:0;left:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);
+      display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;z-index:1000;
+      border-bottom:2px solid #ff7b00;animation:fadeDown 1s ease-in-out;}
+    @keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+    header nav a{margin:0 1rem;color:#fff;text-decoration:none;font-weight:500;position:relative;transition:0.3s;}
+    header nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#ff7b00;transition:0.3s;}
+    header nav a:hover::after,header nav a.active::after{width:100%;}
+    header nav a:hover{color:#ff7b00;transform:scale(1.05);}
 
-    @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px);} to { opacity: 1; transform: translateY(0);} }
+    section{min-height:100vh;padding:6rem 3rem;opacity:0;transform:translateY(40px);transition:1s;}
+    section.visible{opacity:1;transform:translateY(0);}
 
-    header nav a {
-      margin: 0 1rem; color: #fff; text-decoration: none; font-weight: 500;
-      transition: 0.3s;
-    }
-    header nav a.active, header nav a:hover { color: #ff7b00; }
+    /* HERO */
+    .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+      background:linear-gradient(180deg,#0f0f0f 0%,#141414 100%);position:relative;overflow:hidden;}
+    .hero h1{font-size:3rem;color:#ff7b00;margin-bottom:0.5rem;z-index:1;}
+    .typing{font-weight:400;margin-bottom:1rem;color:#ddd;z-index:1;min-height:28px;}
+    .hero img{width:180px;height:180px;border-radius:50%;border:3px solid #ff7b00;margin-bottom:1.5rem;
+      box-shadow:0 0 15px #ff7b00;z-index:1;transition:transform 0.2s ease-out;}
+    .hero .social{display:flex;justify-content:center;gap:1rem;margin-top:1rem;z-index:1;}
+    .hero .social a{width:45px;height:45px;display:flex;justify-content:center;align-items:center;border-radius:50%;
+      background:#1c1c1c;border:2px solid #ff7b00;color:#fff;font-size:1.2rem;transition:0.3s;}
+    .hero .social a:hover{background:#ff7b00;color:#000;transform:scale(1.1) rotate(5deg);box-shadow:0 0 15px #ff7b00;}
+    .btn{background:#ff7b00;color:#fff;padding:0.7rem 1.5rem;border-radius:25px;text-decoration:none;display:inline-block;
+      margin-top:1.2rem;transition:0.3s;animation:pulse 2s infinite;}
+    .btn:hover{background:#ffa733;transform:translateY(-2px);}
+    @keyframes pulse{0%,100%{box-shadow:0 0 10px #ff7b00;}50%{box-shadow:0 0 25px #ffa733;}}
 
-    section { min-height: 100vh; padding: 6rem 3rem; opacity: 0; transform: translateY(40px); transition: 1s; }
-    section.visible { opacity: 1; transform: translateY(0); }
+    /* GENERAL SECTIONS */
+    .section-title{text-align:center;font-size:2rem;margin-bottom:2rem;color:#ff7b00;}
 
-    .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-    .hero h1 { font-size: 3rem; color: #ff7b00; margin-bottom: 0.5rem; }
-    .hero h2 { font-weight: 400; margin-bottom: 1rem; color: #ddd; }
-    .hero img { width: 180px; height: 180px; border-radius: 50%; border: 3px solid #ff7b00; margin-bottom: 1.5rem; box-shadow: 0 0 15px #ff7b00; }
-    .hero .social a { margin: 0 10px; color: #fff; font-size: 1.5rem; transition: 0.3s; }
-    .hero .social a:hover { color: #ff7b00; transform: scale(1.2); }
+    .skills-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
+    .skill{background:#1c1c1c;border:1px solid #ff7b00;padding:0.8rem 1.2rem;border-radius:25px;transition:0.3s;}
+    .skill:hover{background:#ff7b00;color:#000;}
 
-    .btn {
-      background: #ff7b00; color: #fff; padding: 0.7rem 1.5rem; border-radius: 25px;
-      text-decoration: none; display: inline-block; margin-top: 1.2rem; transition: 0.3s;
-    }
-    .btn:hover { background: #ffa733; transform: translateY(-2px); }
-
-    .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #ff7b00; }
-
-    .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-    .skill { background: #1c1c1c; border: 1px solid #ff7b00; padding: 0.8rem 1.2rem; border-radius: 25px; transition: 0.3s; }
-    .skill:hover { background: #ff7b00; color: #000; }
-
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .project-card {
-      background: #1a1a1a; border: 1px solid #333; border-radius: 15px; padding: 1.5rem;
-      transition: 0.3s; text-align: left;
-    }
-    .project-card:hover { border-color: #ff7b00; transform: translateY(-5px); }
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+    .project-card{background:#1a1a1a;border:1px solid #333;border-radius:15px;padding:1.5rem;transition:0.3s;text-align:left;}
+    .project-card:hover{border-color:#ff7b00;transform:translateY(-5px);}
 
     /* Carousel */
-    .achievements-carousel {
-      display: flex; overflow: hidden; position: relative; width: 100%;
-    }
-    .carousel-track {
-      display: flex; animation: scrollLoop 25s linear infinite;
-    }
-    .achievement-badge {
-      flex: 0 0 auto; background: #1c1c1c; color: #fff; border: 2px solid #ff7b00;
-      border-radius: 25px; padding: 1rem 2rem; margin: 0 1rem;
-      font-weight: 500; white-space: nowrap; transition: 0.3s;
-    }
-    .achievement-badge:hover { background: #ff7b00; color: #000; transform: scale(1.05); }
+    .achievements-carousel{display:flex;overflow:hidden;position:relative;width:100%;}
+    .carousel-track{display:flex;animation:scrollLoop 35s linear infinite;}
+    .achievement-badge{flex:0 0 auto;background:#1c1c1c;color:#fff;border:2px solid #ff7b00;border-radius:25px;
+      padding:1rem 2rem;margin:0 1rem;font-weight:500;white-space:nowrap;transition:0.3s;}
+    .achievement-badge:hover{background:#ff7b00;color:#000;transform:scale(1.05);}
+    @keyframes scrollLoop{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-    @keyframes scrollLoop {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    footer{background:#111;text-align:center;padding:2rem;border-top:2px solid #ff7b00;}
+    #rocket{position:fixed;bottom:30px;right:30px;background:#ff7b00;color:#fff;border-radius:50%;width:50px;height:50px;
+      display:flex;justify-content:center;align-items:center;cursor:pointer;box-shadow:0 0 10px #ff7b00;transition:0.3s;z-index:999;}
+    #rocket:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 0 20px #ffa733;}
 
-    footer {
-      background: #111; text-align: center; padding: 2rem;
-      border-top: 2px solid #ff7b00;
-    }
-
-    #rocket {
-      position: fixed; bottom: 30px; right: 30px; background: #ff7b00;
-      color: #fff; border-radius: 50%; width: 50px; height: 50px;
-      display: flex; justify-content: center; align-items: center;
-      cursor: pointer; box-shadow: 0 0 10px #ff7b00; transition: 0.3s; z-index: 999;
-    }
-    #rocket:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 0 20px #ffa733; }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .hero img { width: 140px; height: 140px; }
-      section { padding: 5rem 1.5rem; }
-      .achievement-badge { font-size: 0.9rem; padding: 0.8rem 1.2rem; }
+    @media(max-width:768px){
+      .hero h1{font-size:2.2rem;}
+      .hero img{width:140px;height:140px;}
+      section{padding:5rem 1.5rem;}
+      .achievement-badge{font-size:0.9rem;padding:0.8rem 1.2rem;}
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="logo">Yashraj</div>
@@ -110,13 +84,14 @@
   </header>
 
   <section class="hero" id="home">
-    <img src="profile.jpg" alt="Yashraj">
+    <img src="profile.jpg" alt="Yashraj" id="profilePic">
     <h1>Yashraj Rajput</h1>
-    <h2>Software & Machine Learning Engineer</h2>
+    <h2 class="typing"></h2>
     <div class="social">
       <a href="mailto:yashrajrajput937@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://github.com/YeahYash" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/919687564283" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
     <a href="Yashraj_Resume.pdf" download class="btn">📄 Download Resume</a>
   </section>
@@ -124,14 +99,9 @@
   <section id="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-      <div class="skill">Java</div>
-      <div class="skill">Python</div>
-      <div class="skill">SQL</div>
-      <div class="skill">Machine Learning</div>
-      <div class="skill">Node.js</div>
-      <div class="skill">TensorFlow</div>
-      <div class="skill">Scikit-learn</div>
-      <div class="skill">HTML/CSS/JS</div>
+      <div class="skill">Java</div><div class="skill">Python</div><div class="skill">SQL</div>
+      <div class="skill">Machine Learning</div><div class="skill">Node.js</div>
+      <div class="skill">TensorFlow</div><div class="skill">Scikit-learn</div><div class="skill">HTML/CSS/JS</div>
     </div>
   </section>
 
@@ -172,10 +142,12 @@
 
   <section id="contact" class="contact">
     <h2 class="section-title">Contact Me</h2>
-    <p style="text-align:center;">Feel free to reach out via email or LinkedIn for collaborations or opportunities.</p>
-    <div class="social" style="text-align:center; margin-top:1.5rem;">
+    <p style="text-align:center;">Feel free to reach out via email, WhatsApp, or LinkedIn for collaborations or opportunities.</p>
+    <p style="text-align:center;margin-top:0.5rem;color:#ff7b00;font-weight:600;">📞 +91 9687564283</p>
+    <div class="social" style="justify-content:center;margin-top:1.5rem;">
       <a href="mailto:yashrajrajput937@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/919687564283" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
   </section>
 
@@ -183,34 +155,64 @@
   <div id="rocket"><i class="fa-solid fa-rocket"></i></div>
 
   <script>
-    // Section fade-in
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
+    // Fade-in observer
+    const sections=document.querySelectorAll("section");
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting)entry.target.classList.add("visible");
       });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
+    },{threshold:0.2});
+    sections.forEach(s=>observer.observe(s));
 
     // Navbar highlight
-    const navLinks = document.querySelectorAll('header nav a');
-    window.addEventListener('scroll', () => {
-      let fromTop = window.scrollY + 150;
-      navLinks.forEach(link => {
-        let section = document.querySelector(link.getAttribute('href'));
-        if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-          navLinks.forEach(a => a.classList.remove('active'));
+    const navLinks=document.querySelectorAll('header nav a');
+    window.addEventListener('scroll',()=>{
+      let fromTop=window.scrollY+150;
+      navLinks.forEach(link=>{
+        let section=document.querySelector(link.getAttribute('href'));
+        if(section.offsetTop<=fromTop && section.offsetTop+section.offsetHeight>fromTop){
+          navLinks.forEach(a=>a.classList.remove('active'));
           link.classList.add('active');
         }
       });
     });
 
-    // Rocket scroll-to-top
-    const rocket = document.getElementById('rocket');
-    rocket.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      rocket.style.boxShadow = '0 0 25px #ff7b00';
-      setTimeout(() => rocket.style.boxShadow = '0 0 10px #ff7b00', 500);
+    // Rocket scroll
+    const rocket=document.getElementById('rocket');
+    rocket.addEventListener('click',()=>{
+      window.scrollTo({top:0,behavior:'smooth'});
+      rocket.style.boxShadow='0 0 25px #ff7b00';
+      setTimeout(()=>rocket.style.boxShadow='0 0 10px #ff7b00',500);
+    });
+
+    // Typing animation
+    const roles=["Java Developer","Machine Learning Engineer","Full Stack Developer","Software Engineer"];
+    let i=0,j=0,current="",isDeleting=false;
+    const typing=document.querySelector(".typing");
+    function type(){
+      if(i<roles.length){
+        if(!isDeleting && j<=roles[i].length){
+          current=roles[i].substring(0,j++);
+          typing.textContent=current;
+          setTimeout(type,100);
+        }else if(isDeleting && j>=0){
+          current=roles[i].substring(0,j--);
+          typing.textContent=current;
+          setTimeout(type,50);
+        }else{
+          isDeleting=!isDeleting;
+          if(!isDeleting){i++;j=0;}
+          if(i>=roles.length)i=0;
+          setTimeout(type,800);
+        }
+      }
+    } type();
+
+    // Parallax scroll for profile picture
+    const profilePic=document.getElementById('profilePic');
+    window.addEventListener('scroll',()=>{
+      let offset=window.scrollY*0.2;
+      profilePic.style.transform=`translateY(${offset}px)`;
     });
   </script>
 </body>
