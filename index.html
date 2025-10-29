@@ -6,29 +6,34 @@
   <title>Yashraj Rajput | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
     body { background: #0f0f0f; color: #fff; overflow-x: hidden; }
 
     header {
       position: fixed; width: 100%; top: 0; left: 0;
-      background: rgba(0,0,0,0.8); backdrop-filter: blur(6px);
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 3rem; z-index: 1000;
-      border-bottom: 2px solid #ff7b00;
+      padding: 1rem 3rem; z-index: 1000; border-bottom: 2px solid #ff7b00;
+      animation: fadeDown 1s ease-in-out;
     }
+
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px);} to { opacity: 1; transform: translateY(0);} }
+
     header nav a {
       margin: 0 1rem; color: #fff; text-decoration: none; font-weight: 500;
       transition: 0.3s;
     }
     header nav a.active, header nav a:hover { color: #ff7b00; }
 
-    section { min-height: 100vh; padding: 6rem 3rem; }
+    section { min-height: 100vh; padding: 6rem 3rem; opacity: 0; transform: translateY(40px); transition: 1s; }
+    section.visible { opacity: 1; transform: translateY(0); }
 
     .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
     .hero h1 { font-size: 3rem; color: #ff7b00; margin-bottom: 0.5rem; }
-    .hero h2 { font-weight: 400; margin-bottom: 1rem; }
-    .hero img { width: 180px; height: 180px; border-radius: 50%; border: 3px solid #ff7b00; margin-bottom: 1.5rem; }
+    .hero h2 { font-weight: 400; margin-bottom: 1rem; color: #ddd; }
+    .hero img { width: 180px; height: 180px; border-radius: 50%; border: 3px solid #ff7b00; margin-bottom: 1.5rem; box-shadow: 0 0 15px #ff7b00; }
     .hero .social a { margin: 0 10px; color: #fff; font-size: 1.5rem; transition: 0.3s; }
     .hero .social a:hover { color: #ff7b00; transform: scale(1.2); }
 
@@ -40,7 +45,6 @@
 
     .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #ff7b00; }
 
-    .skills, .projects, .achievements { text-align: center; }
     .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
     .skill { background: #1c1c1c; border: 1px solid #ff7b00; padding: 0.8rem 1.2rem; border-radius: 25px; transition: 0.3s; }
     .skill:hover { background: #ff7b00; color: #000; }
@@ -52,30 +56,30 @@
     }
     .project-card:hover { border-color: #ff7b00; transform: translateY(-5px); }
 
-    /* Achievements carousel */
-    .achievements-container {
-      overflow-x: auto; display: flex; gap: 1rem; scroll-snap-type: x mandatory;
-      scrollbar-width: none; -ms-overflow-style: none;
-      animation: scroll 25s linear infinite;
+    /* Carousel */
+    .achievements-carousel {
+      display: flex; overflow: hidden; position: relative; width: 100%;
     }
-    .achievements-container::-webkit-scrollbar { display: none; }
+    .carousel-track {
+      display: flex; animation: scrollLoop 25s linear infinite;
+    }
     .achievement-badge {
       flex: 0 0 auto; background: #1c1c1c; color: #fff; border: 2px solid #ff7b00;
-      border-radius: 25px; padding: 1rem 2rem; font-weight: 500; scroll-snap-align: center;
-      transition: transform 0.3s, background 0.3s;
+      border-radius: 25px; padding: 1rem 2rem; margin: 0 1rem;
+      font-weight: 500; white-space: nowrap; transition: 0.3s;
     }
     .achievement-badge:hover { background: #ff7b00; color: #000; transform: scale(1.05); }
-    @keyframes scroll {
+
+    @keyframes scrollLoop {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
     footer {
       background: #111; text-align: center; padding: 2rem;
-      border-top: 2px solid #ff7b00; position: relative;
+      border-top: 2px solid #ff7b00;
     }
 
-    /* Rocket */
     #rocket {
       position: fixed; bottom: 30px; right: 30px; background: #ff7b00;
       color: #fff; border-radius: 50%; width: 50px; height: 50px;
@@ -87,8 +91,8 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
       .hero img { width: 140px; height: 140px; }
-      .skills-grid { flex-direction: column; align-items: center; }
       section { padding: 5rem 1.5rem; }
+      .achievement-badge { font-size: 0.9rem; padding: 0.8rem 1.2rem; }
     }
   </style>
 </head>
@@ -117,7 +121,7 @@
     <a href="Yashraj_Resume.pdf" download class="btn">📄 Download Resume</a>
   </section>
 
-  <section id="skills" class="skills">
+  <section id="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
       <div class="skill">Java</div>
@@ -131,12 +135,12 @@
     </div>
   </section>
 
-  <section id="projects" class="projects">
+  <section id="projects">
     <h2 class="section-title">Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
         <h3>🎬 Movie Recommendation System</h3>
-        <p>Machine Learning project using cosine similarity and TMDB API to suggest similar movies.</p>
+        <p>ML project using cosine similarity and TMDB API to suggest similar movies.</p>
         <a href="https://movie-recommendation-system-lql8.onrender.com" target="_blank" class="btn">Live Demo</a>
       </div>
       <div class="project-card">
@@ -151,15 +155,18 @@
     </div>
   </section>
 
-  <section id="achievements" class="achievements">
+  <section id="achievements">
     <h2 class="section-title">Achievements</h2>
-    <div class="achievements-container">
-      <div class="achievement-badge">💼 Java Developer Intern — URO Websoft Solutions</div>
-      <div class="achievement-badge">🧩 Certificate in Java Tools — Infosys</div>
-      <div class="achievement-badge">🌐 Networking Essentials — Cisco</div>
-      <div class="achievement-badge">💼 Java Developer Intern — URO Websoft Solutions</div>
-      <div class="achievement-badge">🧩 Certificate in Java Tools — Infosys</div>
-      <div class="achievement-badge">🌐 Networking Essentials — Cisco</div>
+    <div class="achievements-carousel">
+      <div class="carousel-track">
+        <div class="achievement-badge">💼 Java Developer Intern — URO Websoft Solutions</div>
+        <div class="achievement-badge">🧩 Certificate in Java Tools — Infosys</div>
+        <div class="achievement-badge">🌐 Networking Essentials — Cisco</div>
+        <div class="achievement-badge">🏅 Machine Learning Project Recognition — Academic</div>
+        <div class="achievement-badge">💼 Java Developer Intern — URO Websoft Solutions</div>
+        <div class="achievement-badge">🧩 Certificate in Java Tools — Infosys</div>
+        <div class="achievement-badge">🌐 Networking Essentials — Cisco</div>
+      </div>
     </div>
   </section>
 
@@ -172,13 +179,20 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Yashraj Rajput. All Rights Reserved.</p>
-  </footer>
-
+  <footer><p>© 2025 Yashraj Rajput. All Rights Reserved.</p></footer>
   <div id="rocket"><i class="fa-solid fa-rocket"></i></div>
 
   <script>
+    // Section fade-in
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+
+    // Navbar highlight
     const navLinks = document.querySelectorAll('header nav a');
     window.addEventListener('scroll', () => {
       let fromTop = window.scrollY + 150;
@@ -191,6 +205,7 @@
       });
     });
 
+    // Rocket scroll-to-top
     const rocket = document.getElementById('rocket');
     rocket.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
