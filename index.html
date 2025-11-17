@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yashraj Rajput | Portfolio</title>
+  <title>Yashrajsinh Rajput | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -27,7 +27,8 @@
     /* HERO */
     .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
       background:linear-gradient(180deg,#0f0f0f 0%,#141414 100%);position:relative;overflow:hidden;}
-    .hero h1{font-size:3rem;color:#ff7b00;margin-bottom:0.5rem;z-index:1;}
+    .hero h1{font-size:3rem;color:#ff7b00;margin-bottom:0.5rem;z-index:1;text-transform:uppercase;}
+    .hero-sub{font-size:0.95rem;color:#ccc;margin-bottom:0.5rem;}
     .typing{font-weight:400;margin-bottom:1rem;color:#ddd;z-index:1;min-height:28px;}
     .hero img{width:180px;height:180px;border-radius:50%;border:3px solid #ff7b00;margin-bottom:1.5rem;
       box-shadow:0 0 15px #ff7b00;z-index:1;transition:transform 0.2s ease-out;}
@@ -88,7 +89,7 @@
     .slider-dots span{width:8px;height:8px;border-radius:50%;background:#555;cursor:pointer;}
     .slider-dots span.active{background:#ff7b00;}
 
-    /* ACHIEVEMENTS (carousel) */
+    /* ACHIEVEMENTS (scrolling badges) */
     .achievements-carousel{display:flex;overflow:hidden;position:relative;width:100%;}
     .carousel-track{display:flex;animation:scrollLoop 35s linear infinite;}
     .achievement-badge{flex:0 0 auto;background:#1c1c1c;color:#fff;border:2px solid #ff7b00;border-radius:25px;
@@ -160,7 +161,8 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <img src="profile.jpg" alt="Yashraj" id="profilePic">
-    <h1>Yashraj Rajput</h1>
+    <h1>YASHRAJ</h1>
+    <p class="hero-sub">Official Name: <b>Yashrajsinh Rajput</b></p>
     <h2 class="typing"></h2>
     <div class="social">
       <a href="mailto:yashrajrajput937@gmail.com"><i class="fa-solid fa-envelope"></i></a>
@@ -176,8 +178,9 @@
     <h2 class="section-title">About Me</h2>
     <div class="about-wrap">
       <p class="about-intro">
-        I’m a software & machine learning engineer who loves building clean, data-driven, and scalable solutions.
-        My tools of choice are <b>Java</b>, <b>Python</b>, and modern web tech — with a focus on elegant UX and robust backend design.
+        I’m <b>Yashrajsinh Rajput</b>, a software & machine learning engineer who enjoys building clean,
+        data-driven and scalable applications. I work primarily with <b>Java</b>, <b>Python</b>, and modern web
+        technologies, focusing on elegant UX and robust backend design.
       </p>
 
       <div class="timeline">
@@ -194,8 +197,8 @@
         <div class="t-item">
           <div class="t-left"></div>
           <div class="t-right">
-            <span class="t-badge">ML & Systems</span>
-            <div class="t-card">Projects in ML (recommendation, vision) and full-stack app design.</div>
+            <span class="t-badge">ML & 3D Research</span>
+            <div class="t-card">Worked on recommendation systems and a 3D texture annotation tool for research-grade datasets.</div>
           </div>
         </div>
       </div>
@@ -208,7 +211,8 @@
 
     <div class="skills-grid">
       <div class="skill">Java</div><div class="skill">Python</div><div class="skill">SQL</div>
-      <div class="skill">Machine Learning</div><div class="skill">Node.js</div>
+      <div class="skill">Machine Learning</div><div class="skill">Computer Vision</div>
+      <div class="skill">Flask</div><div class="skill">Node.js (Basics)</div>
       <div class="skill">TensorFlow</div><div class="skill">Scikit-learn</div><div class="skill">HTML/CSS/JS</div>
     </div>
 
@@ -238,42 +242,42 @@
     <div class="projects-grid">
       <div class="project-card">
         <h3>🎬 Movie Recommendation System</h3>
-        <p>ML project using cosine similarity and TMDB API to suggest similar movies.</p>
+        <p>ML project using cosine similarity and content-based filtering to suggest similar movies.</p>
         <a href="https://movie-recommendation-system-lql8.onrender.com" target="_blank" class="btn">Live Demo</a>
       </div>
       <div class="project-card">
         <h3>🎓 Student Management System</h3>
-        <p>Flask app integrated with MySQL for managing student data seamlessly.</p>
+        <p>Flask app integrated with MySQL for managing student records with a simple web interface.</p>
       </div>
       <div class="project-card">
         <h3>🌍 Portfolio Website</h3>
-        <p>Personal portfolio showcasing skills, projects, and achievements with modern UI.</p>
-        <a href="https://yeahyash.github.io/" target="_blank" class="btn">Live Site</a>
+        <p>Modern responsive portfolio showcasing skills, projects, research and contact details.</p>
+        <a href="https://yeahyash.github.io/Personal-Portfolio/" target="_blank" class="btn">Live Site</a>
       </div>
     </div>
   </section>
 
   <!-- RESEARCH PROJECT -->
   <section id="research">
-    <h2 class="section-title">Research Project — 3D Texture Annotation Tool</h2>
+    <h2 class="section-title">Research — 3D Texture Annotation Tool</h2>
     <div class="research-wrap">
       <div class="research-text">
         <p>
           A hybrid 3D annotation tool to label surface textures on .PLY meshes
-          (<b>Smooth</b>, <b>Rough</b>, <b>Striated</b>, <b>Porous</b>) using both manual painting
+          (<b>Smooth</b>, <b>Rough</b>, <b>Striated</b>, <b>Porous</b>) using manual painting
           and AI-assisted labeling based on curvature features and K-Means clustering.
         </p>
         <p>
-          The system forms a complete pipeline from mesh loading → manual painting →
-          curvature extraction → auto clustering → export. It is designed to support
-          dataset creation for future 3D deep learning models.
+          The pipeline covers mesh loading → manual painting → curvature extraction
+          → K-Means (k = 4) → texture assignment → export to colored PLY + JSON.
+          It is designed for building datasets for future 3D deep learning models.
         </p>
         <div class="badge-list">
           <span>PyVista</span><span>PyQt5</span><span>NumPy</span><span>Scikit-learn</span>
           <span>K-Means</span><span>Curvature Features</span><span>PLY / JSON</span>
         </div>
         <p class="research-note">
-          🔒 Code & full demo available on request (research-oriented project).
+          🔒 Code & full demo available on request (research project; not publicly published).
         </p>
       </div>
 
@@ -298,12 +302,12 @@
     <div class="achievements-carousel">
       <div class="carousel-track">
         <div class="achievement-badge">💼 Java Developer Intern — URO Websoft Solutions</div>
-        <div class="achievement-badge">🧩 Certificate in Java Tools — Infosys</div>
-        <div class="achievement-badge">🌐 Networking Essentials — Cisco</div>
-        <div class="achievement-badge">🏅 Machine Learning Project Recognition — Academic</div>
+        <div class="achievement-badge">🧩 Infosys — Java Tools Certificate</div>
+        <div class="achievement-badge">🌐 Cisco — Networking Essentials</div>
+        <div class="achievement-badge">🧪 3D Texture Annotation Tool (Research)</div>
         <div class="achievement-badge">💼 Java Developer Intern — URO Websoft Solutions</div>
-        <div class="achievement-badge">🧩 Certificate in Java Tools — Infosys</div>
-        <div class="achievement-badge">🌐 Networking Essentials — Cisco</div>
+        <div class="achievement-badge">🧩 Infosys — Java Tools Certificate</div>
+        <div class="achievement-badge">🌐 Cisco — Networking Essentials</div>
       </div>
     </div>
   </section>
@@ -311,21 +315,32 @@
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2 class="section-title">Contact Me</h2>
-    <p style="text-align:center;">Open to internships, junior roles, and freelance projects — let’s build something excellent.</p>
-    <p style="text-align:center;margin-top:0.5rem;color:#ff7b00;font-weight:600;">📞 +91 9687564283</p>
+    <p style="text-align:center;"><b>Name:</b> YASHRAJSINH RAJPUT</p>
+    <p style="text-align:center;margin-top:0.4rem;">
+      📧 <b>Email:</b>
+      <a href="mailto:yashrajrajput937@gmail.com" style="color:#ffda9c;text-decoration:none;">
+        yashrajrajput937@gmail.com
+      </a>
+    </p>
+    <p style="text-align:center;margin-top:0.4rem;">
+      📞 <b>France (Calls/SMS):</b> +33 766544696
+    </p>
+    <p style="text-align:center;margin-top:0.4rem;">
+      📱 <b>WhatsApp (India):</b> +91 9687564283
+    </p>
     <div class="social" style="justify-content:center;margin-top:1.2rem;">
       <a href="mailto:yashrajrajput937@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/yashrajsinh-rajput-b266041a3/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://wa.me/919687564283" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p class="small" style="text-align:center;">Responses in 24 hours. Based in Rouen, FR & Vadodara, IN.</p>
+    <p class="small" style="text-align:center;">Responses in 24 hours. Based in Rouen (FR) & Vadodara (IN).</p>
   </section>
 
-  <footer><p>© 2025 Yashraj Rajput. All Rights Reserved.</p></footer>
+  <footer><p>© 2025 Yashrajsinh Rajput. All Rights Reserved.</p></footer>
 
   <!-- Floating Buttons -->
   <button class="hire" onclick="window.open('https://wa.me/919687564283','_blank')">
-    <i class="fa-solid fa-briefcase"></i> Hire Me
+    <i class="fa-solid fa-briefcase"></i> Message on WhatsApp
   </button>
   <div id="rocket"><i class="fa-solid fa-rocket"></i></div>
 
@@ -333,7 +348,7 @@
   <div id="resumeModal" class="modal" aria-hidden="true">
     <div class="modal-card">
       <div class="modal-head">
-        <h4>Resume — Yashraj Rajput</h4>
+        <h4>Resume — Yashrajsinh Rajput</h4>
         <div class="modal-actions">
           <a class="m-btn primary" href="Yashraj_Resume.pdf" download>Download PDF</a>
           <button class="close-x" id="closeModal" aria-label="Close">&times;</button>
@@ -374,7 +389,7 @@
     });
 
     // Typing animation
-    const roles=["Java Developer","Machine Learning Engineer","Full Stack Developer","Software Engineer"];
+    const roles=["Java Developer","Machine Learning Engineer","Software Engineer","3D/ML Researcher"];
     let i=0,j=0,isDeleting=false;
     const typing=document.querySelector(".typing");
     function type(){
