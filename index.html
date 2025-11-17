@@ -15,10 +15,11 @@
       display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;z-index:1000;
       border-bottom:2px solid #ff7b00;animation:fadeDown 1s ease-in-out;}
     @keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
-    header nav a{margin:0 1rem;color:#fff;text-decoration:none;font-weight:500;position:relative;transition:0.3s;}
+    header nav a{margin:0 0.7rem;color:#fff;text-decoration:none;font-weight:500;position:relative;transition:0.3s;font-size:0.95rem;}
     header nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#ff7b00;transition:0.3s;}
     header nav a:hover::after,header nav a.active::after{width:100%;}
     header nav a:hover{color:#ff7b00;transform:scale(1.05);}
+    .logo{font-weight:700;color:#ff7b00;font-size:1.1rem;}
 
     section{min-height:100vh;padding:6rem 3rem;opacity:0;transform:translateY(40px);transition:1s;}
     section.visible{opacity:1;transform:translateY(0);}
@@ -35,7 +36,7 @@
       background:#1c1c1c;border:2px solid #ff7b00;color:#fff;font-size:1.2rem;transition:0.3s;}
     .hero .social a:hover{background:#ff7b00;color:#000;transform:scale(1.1) rotate(5deg);box-shadow:0 0 15px #ff7b00;}
     .btn{background:#ff7b00;color:#fff;padding:0.7rem 1.5rem;border-radius:25px;text-decoration:none;display:inline-block;
-      margin-top:1.2rem;transition:0.3s;animation:pulse 2s infinite;}
+      margin-top:1.2rem;transition:0.3s;animation:pulse 2s infinite;font-size:0.95rem;}
     .btn:hover{background:#ffa733;transform:translateY(-2px);}
     @keyframes pulse{0%,100%{box-shadow:0 0 10px #ff7b00;}50%{box-shadow:0 0 25px #ffa733;}}
 
@@ -51,43 +52,60 @@
     .t-right{text-align:left;}
     .t-left{text-align:right;}
     .t-badge{background:#1c1c1c;border:2px solid #ff7b00;color:#fff;padding:0.4rem 0.7rem;border-radius:20px;font-size:0.85rem;display:inline-block;}
-    .t-card{background:#181818;border:1px solid #333;border-radius:10px;padding:0.9rem 1rem;margin-top:0.5rem;}
+    .t-card{background:#181818;border:1px solid #333;border-radius:10px;padding:0.9rem 1rem;margin-top:0.5rem;font-size:0.9rem;}
     .t-dot{position:absolute;left:calc(50% - 7px);width:14px;height:14px;background:#ff7b00;border-radius:50%;box-shadow:0 0 10px #ff7b00;}
     .t-dot.dot1{top:38px}.t-dot.dot2{top:162px}
 
     /* SKILLS (tags + bars) */
     .skills-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;margin-bottom:1.8rem;}
-    .skill{background:#1c1c1c;border:1px solid #ff7b00;padding:0.6rem 1rem;border-radius:25px;transition:0.3s;font-size:0.95rem;}
+    .skill{background:#1c1c1c;border:1px solid #ff7b00;padding:0.6rem 1rem;border-radius:25px;transition:0.3s;font-size:0.9rem;}
     .skill:hover{background:#ff7b00;color:#000;}
     .bars{max-width:900px;margin:0 auto;}
     .bar{margin:12px 0;}
-    .bar-title{display:flex;justify-content:space-between;margin-bottom:6px;font-size:0.95rem;color:#ddd;}
+    .bar-title{display:flex;justify-content:space-between;margin-bottom:6px;font-size:0.9rem;color:#ddd;}
     .bar-track{height:10px;background:#222;border-radius:8px;overflow:hidden;border:1px solid #333;}
     .bar-fill{height:100%;width:0;background:linear-gradient(90deg,#ff7b00,#ffa733);border-radius:8px;transition:width 1.2s ease;}
 
     /* PROJECTS */
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
     .project-card{background:#1a1a1a;border:1px solid #333;border-radius:15px;padding:1.5rem;transition:0.3s;text-align:left;}
+    .project-card h3{margin-bottom:0.5rem;}
+    .project-card p{font-size:0.9rem;color:#ddd;}
     .project-card:hover{border-color:#ff7b00;transform:translateY(-5px);}
+
+    /* RESEARCH PROJECT SECTION */
+    .research-wrap{max-width:1100px;margin:0 auto;display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;}
+    .research-text{flex:1 1 320px;}
+    .research-text p{font-size:0.95rem;line-height:1.7;color:#e0e0e0;margin-bottom:0.8rem;}
+    .badge-list span{display:inline-block;background:#1c1c1c;border:1px solid #ff7b00;border-radius:18px;padding:0.25rem 0.7rem;font-size:0.8rem;margin:0.15rem 0.25rem;}
+    .research-note{font-size:0.85rem;color:#ffda9c;margin-top:0.3rem;}
+
+    .research-gallery{flex:1 1 340px;background:#161616;border-radius:12px;border:1px solid #333;overflow:hidden;position:relative;}
+    .slide{display:none;width:100%;height:100%;}
+    .slide img{width:100%;display:block;}
+    .slide.active{display:block;}
+    .slider-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
+    .slider-dots span{width:8px;height:8px;border-radius:50%;background:#555;cursor:pointer;}
+    .slider-dots span.active{background:#ff7b00;}
 
     /* ACHIEVEMENTS (carousel) */
     .achievements-carousel{display:flex;overflow:hidden;position:relative;width:100%;}
     .carousel-track{display:flex;animation:scrollLoop 35s linear infinite;}
     .achievement-badge{flex:0 0 auto;background:#1c1c1c;color:#fff;border:2px solid #ff7b00;border-radius:25px;
-      padding:1rem 2rem;margin:0 1rem;font-weight:500;white-space:nowrap;transition:0.3s;}
+      padding:1rem 2rem;margin:0 1rem;font-weight:500;white-space:nowrap;transition:0.3s;font-size:0.9rem;}
     .achievement-badge:hover{background:#ff7b00;color:#000;transform:scale(1.05);}
     @keyframes scrollLoop{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
     /* CONTACT */
-    .contact p.small{color:#cfcfcf;margin-top:8px}
+    .contact p.small{color:#cfcfcf;margin-top:8px;font-size:0.85rem;}
 
     /* FOOTER + ROCKET + HIRE ME */
-    footer{background:#111;text-align:center;padding:2rem;border-top:2px solid #ff7b00;}
+    footer{background:#111;text-align:center;padding:2rem;border-top:2px solid #ff7b00;font-size:0.9rem;}
     #rocket{position:fixed;bottom:30px;right:30px;background:#ff7b00;color:#fff;border-radius:50%;width:50px;height:50px;
       display:flex;justify-content:center;align-items:center;cursor:pointer;box-shadow:0 0 10px #ff7b00;transition:0.3s;z-index:999;}
     #rocket:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 0 20px #ffa733;}
     .hire{position:fixed;bottom:30px;left:30px;background:#ff7b00;color:#000;border:none;border-radius:28px;
-      padding:10px 16px;font-weight:600;cursor:pointer;z-index:999;box-shadow:0 0 10px #ff7b00;transition:.25s;}
+      padding:10px 16px;font-weight:600;cursor:pointer;z-index:999;box-shadow:0 0 10px #ff7b00;transition:.25s;font-size:0.9rem;}
     .hire i{margin-right:8px}
     .hire:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 0 20px #ffa733;}
 
@@ -97,22 +115,31 @@
     .modal-card{background:#121212;border:1px solid #333;border-radius:12px;max-width:920px;width:92%;max-height:86vh;overflow:hidden;
       box-shadow:0 10px 30px rgba(0,0,0,0.5);}
     .modal-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #222;}
-    .modal-head h4{color:#ff7b00;margin:0}
+    .modal-head h4{color:#ff7b00;margin:0;font-size:1rem;}
     .modal-body{background:#0c0c0c;}
     .modal-actions{display:flex;gap:10px;align-items:center}
-    .m-btn{background:#1c1c1c;border:1px solid #444;color:#fff;padding:6px 12px;border-radius:8px;cursor:pointer;}
+    .m-btn{background:#1c1c1c;border:1px solid #444;color:#fff;padding:6px 12px;border-radius:8px;cursor:pointer;font-size:0.85rem;}
     .m-btn.primary{background:#ff7b00;color:#000;border-color:#ff7b00;}
     .modal iframe{width:100%;height:72vh;border:0;}
     .close-x{background:transparent;border:none;color:#fff;font-size:1.2rem;cursor:pointer;margin-left:6px}
 
+    @media(max-width:900px){
+      .research-wrap{flex-direction:column;}
+    }
+
     @media(max-width:768px){
+      header{padding:0.7rem 1.2rem;}
       .hero h1{font-size:2.2rem;}
       .hero img{width:140px;height:140px;}
       section{padding:5rem 1.5rem;}
-      .achievement-badge{font-size:0.9rem;padding:0.8rem 1.2rem;}
+      .achievement-badge{font-size:0.85rem;padding:0.8rem 1.2rem;}
       .timeline::before{left:8px}
       .t-left,.t-right{width:100%;text-align:left}
       .t-dot{left:2px}
+      .logo{display:none;}
+      header nav a{margin:0 0.4rem;font-size:0.8rem;}
+      .hire{left:15px;bottom:20px;padding:8px 12px;font-size:0.8rem;}
+      #rocket{right:15px;bottom:20px;width:44px;height:44px;}
     }
   </style>
 </head>
@@ -124,6 +151,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
       <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -152,7 +180,6 @@
         My tools of choice are <b>Java</b>, <b>Python</b>, and modern web tech — with a focus on elegant UX and robust backend design.
       </p>
 
-      <!-- mini timeline (concise, fits your vibe) -->
       <div class="timeline">
         <span class="t-dot dot1"></span><span class="t-dot dot2"></span>
 
@@ -179,14 +206,12 @@
   <section id="skills">
     <h2 class="section-title">Skills</h2>
 
-    <!-- tags -->
     <div class="skills-grid">
       <div class="skill">Java</div><div class="skill">Python</div><div class="skill">SQL</div>
       <div class="skill">Machine Learning</div><div class="skill">Node.js</div>
       <div class="skill">TensorFlow</div><div class="skill">Scikit-learn</div><div class="skill">HTML/CSS/JS</div>
     </div>
 
-    <!-- animated bars -->
     <div class="bars">
       <div class="bar">
         <div class="bar-title"><span>Java</span><span>90%</span></div>
@@ -224,6 +249,45 @@
         <h3>🌍 Portfolio Website</h3>
         <p>Personal portfolio showcasing skills, projects, and achievements with modern UI.</p>
         <a href="https://yeahyash.github.io/" target="_blank" class="btn">Live Site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH PROJECT -->
+  <section id="research">
+    <h2 class="section-title">Research Project — 3D Texture Annotation Tool</h2>
+    <div class="research-wrap">
+      <div class="research-text">
+        <p>
+          A hybrid 3D annotation tool to label surface textures on .PLY meshes
+          (<b>Smooth</b>, <b>Rough</b>, <b>Striated</b>, <b>Porous</b>) using both manual painting
+          and AI-assisted labeling based on curvature features and K-Means clustering.
+        </p>
+        <p>
+          The system forms a complete pipeline from mesh loading → manual painting →
+          curvature extraction → auto clustering → export. It is designed to support
+          dataset creation for future 3D deep learning models.
+        </p>
+        <div class="badge-list">
+          <span>PyVista</span><span>PyQt5</span><span>NumPy</span><span>Scikit-learn</span>
+          <span>K-Means</span><span>Curvature Features</span><span>PLY / JSON</span>
+        </div>
+        <p class="research-note">
+          🔒 Code & full demo available on request (research-oriented project).
+        </p>
+      </div>
+
+      <div class="research-gallery">
+        <div class="slide active">
+          <img src="3d_texture_gui.png" alt="3D Texture Annotation Tool GUI">
+        </div>
+        <div class="slide">
+          <img src="3d_texture_auto.png" alt="Auto annotation / colored mesh preview">
+        </div>
+        <div class="slider-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -341,6 +405,26 @@
     });
     document.getElementById('closeModal').addEventListener('click',()=>{ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); });
     modal.addEventListener('click',e=>{ if(e.target===modal){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }});
+
+    // Research slider auto-play
+    const slides = document.querySelectorAll('.research-gallery .slide');
+    const dots   = document.querySelectorAll('.slider-dots .dot');
+    let currentSlide = 0;
+
+    function showSlide(idx){
+      slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+      dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+      currentSlide = idx;
+    }
+
+    dots.forEach(dot=>{
+      dot.addEventListener('click',()=>showSlide(parseInt(dot.dataset.index)));
+    });
+
+    setInterval(()=>{
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    },4000);
   </script>
 </body>
 </html>
