@@ -27,7 +27,7 @@
     /* HERO */
     .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
       background:linear-gradient(180deg,#0f0f0f 0%,#141414 100%);position:relative;overflow:hidden;}
-    .hero h1{font-size:3rem;color:#ff7b00;margin-bottom:0.5rem;z-index:1;text-transform:uppercase;}
+    .hero h1{font-size:3rem;color:#ff7b00;margin-bottom:0.2rem;z-index:1;text-transform:uppercase;}
     .hero-sub{font-size:0.95rem;color:#ccc;margin-bottom:0.5rem;}
     .typing{font-weight:400;margin-bottom:1rem;color:#ddd;z-index:1;min-height:28px;}
     .hero img{width:180px;height:180px;border-radius:50%;border:3px solid #ff7b00;margin-bottom:1.5rem;
@@ -113,19 +113,25 @@
     /* MODAL (resume preview) */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:2000;}
     .modal.open{display:flex;}
-    .modal-card{background:#121212;border:1px solid #333;border-radius:12px;max-width:920px;width:92%;max-height:86vh;overflow:hidden;
+    .modal-card{background:#121212;border:1px solid #333;border-radius:12px;max-width:960px;width:92%;max-height:86vh;overflow:hidden;
       box-shadow:0 10px 30px rgba(0,0,0,0.5);}
     .modal-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #222;}
     .modal-head h4{color:#ff7b00;margin:0;font-size:1rem;}
-    .modal-body{background:#0c0c0c;}
+    .modal-body{background:#0c0c0c;display:flex;flex-direction:column;}
     .modal-actions{display:flex;gap:10px;align-items:center}
     .m-btn{background:#1c1c1c;border:1px solid #444;color:#fff;padding:6px 12px;border-radius:8px;cursor:pointer;font-size:0.85rem;}
     .m-btn.primary{background:#ff7b00;color:#000;border-color:#ff7b00;}
-    .modal iframe{width:100%;height:72vh;border:0;}
+    .modal iframe{width:100%;height:60vh;border:0;}
     .close-x{background:transparent;border:none;color:#fff;font-size:1.2rem;cursor:pointer;margin-left:6px}
+    .modal-extra{padding:10px 16px;border-top:1px solid #222;background:#101010;}
+    .modal-extra h5{margin:0 0 6px 0;font-size:0.85rem;color:#ffda9c;}
+    .resume-links{display:flex;flex-wrap:wrap;gap:8px;}
+    .resume-links a{font-size:0.8rem;text-decoration:none;}
 
     @media(max-width:900px){
       .research-wrap{flex-direction:column;}
+      .modal-card{max-height:92vh;}
+      .modal iframe{height:50vh;}
     }
 
     @media(max-width:768px){
@@ -350,12 +356,21 @@
       <div class="modal-head">
         <h4>Resume — Yashrajsinh Rajput</h4>
         <div class="modal-actions">
-          <a class="m-btn primary" href="Yashraj_Resume.pdf" download>Download PDF</a>
+          <a class="m-btn primary" href="Yashraj_Resume.pdf" download>Download Main Resume</a>
           <button class="close-x" id="closeModal" aria-label="Close">&times;</button>
         </div>
       </div>
       <div class="modal-body">
         <iframe src="Yashraj_Resume.pdf#toolbar=0&zoom=110" title="Resume preview"></iframe>
+      </div>
+      <div class="modal-extra">
+        <h5>Other role-specific resumes:</h5>
+        <div class="resume-links">
+          <a class="m-btn" href="Yashrajsinh_Rajput_Java_Developer_Resume.pdf" download>Java Developer Resume</a>
+          <a class="m-btn" href="Yashrajsinh_Rajput_Fullstack_Developer_Resume.pdf" download>Fullstack Developer Resume</a>
+          <a class="m-btn" href="Yashrajsinh_Rajput_ML_Engineer_Resume.pdf" download>ML Engineer Resume</a>
+          <a class="m-btn" href="Yashrajsinh_Rajput_Software_Engineer_Resume.pdf" download>Software Engineer Resume</a>
+        </div>
       </div>
     </div>
   </div>
